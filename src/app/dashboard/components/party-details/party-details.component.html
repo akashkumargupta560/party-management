@@ -1,0 +1,439 @@
+<div class="party-details-page">
+    <div class="create-btn">
+        <!-- <a routerLink="/create-party" > -->
+        <p-button label="Create Party" [raised]="true" severity="info" (onClick)="showDialog()" />
+        <!-- </a> -->
+
+    </div>
+    <div class="card">
+        <p-toast></p-toast>
+        <p-table [value]="parties" dataKey="id" editMode="row" [tableStyle]="{'min-width': '50rem'}">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Company Name</th>
+                    <th>Mobile No</th>
+                    <th>Email</th>
+                    <th>Remark</th>
+                    <th>DOB</th>
+                    <th>Anniversary Date</th>
+                    <th>GSTIN</th>
+                    <th>Pan No</th>
+                    <th>Apply Tds</th>
+                    <th>Credit Limit</th>
+                    <th>is Active</th>
+                    <th>Image</th>
+                    <th style="padding:0rem 3rem;">Actions</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-party let-editing="editing" let-ri="rowIndex">
+                <tr [pEditableRow]="party">
+                    <td>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="party.id" />
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{party.id}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="party.name" required />
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{party.name}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="party.company_name" required />
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{party.company_name}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="party.mobile_no" />
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{party.mobile_no}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="party.email" />
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{party.email}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="party.remark" />
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{party.remark}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="party.date_of_birth" />
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{party.date_of_birth }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="party.anniversary_date" />
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{party.anniversary_date }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="party.gstin" />
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{party.gstin }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="party.pan_no" />
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{party.pan_no }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="party.apply_tds" />
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{party.apply_tds }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="party.credit_limit" />
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{party.credit_limit }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="party.is_active" />
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{party.is_active }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td>
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="party.image" />
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{party.image }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+
+                    <td>
+                        <div class="flex align-items-center justify-content-center gap-2">
+                            <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil"
+                                (click)="onRowEditInit(party)" class="p-button-rounded p-button-text">
+                            </button>
+                            <button *ngIf="!editing" pButton pRipple type="button" icon="pi pi-trash"
+                                (click)="onRowDelete(party)" class="p-button-rounded p-button-text">
+                            </button>
+                            <button *ngIf="editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check"
+                                (click)="onRowEditSave(party)"
+                                class="p-button-rounded p-button-text p-button-success mr-2">
+                            </button>
+                            <button *ngIf="editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times"
+                                (click)="onRowEditCancel(party, ri)"
+                                class="p-button-rounded p-button-text p-button-danger">
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
+
+<p-dialog header="Party Application" [modal]="true" [(visible)]="visible" [style]="{ width: '45rem' }">
+    <div class="party-form">
+        <form [formGroup]="partyForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" formControlName="name">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Company Name*</label>
+                <input type="text" class="form-control" formControlName="company_name">
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">Mobile No.*</label>
+                        <input type="tel" class="form-control" formControlName="mobile_no">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">WhatsApp No.</label>
+                        <input type="tel" class="form-control" formControlName="whatsapp_no">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">Email address</label>
+                        <input type="email" class="form-control" formControlName="email" aria-describedby="emailHelp">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">Remark</label>
+                        <input type="text" class="form-control" formControlName="remark">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">Date Of Birth</label>
+                        <input type="date" class="form-control" formControlName="date_of_birth">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">Anniversary Date</label>
+                        <input type="date" class="form-control" formControlName="anniversary_date">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">GST IN</label>
+                        <input type="text" class="form-control" formControlName="gstin">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">Pan No</label>
+                        <input type="text" class="form-control" formControlName="pan_no">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">Credit limit*</label>
+                        <input type="number" class="form-control" formControlName="credit_limit">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label">Telephone No.</label>
+                        <input type="tel" class="form-control" formControlName="telephone_no">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Login Access*</label>
+                <div class="row mr-3">
+                    <div class="col-md-6 p-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" formControlName="login_access" value="true">
+                            <label class="form-check-label">
+                                True
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 p-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" formControlName="login_access" value="false">
+                            <label class="form-check-label">
+                                False
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apply TDs*</label>
+                <div class="row">
+                    <div class="col-md-6 p-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" formControlName="apply_tds" value="true">
+                            <label class="form-check-label">
+                                True
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 p-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" formControlName="apply_tds" value="false">
+                            <label class="form-check-label">
+                                False
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Image*</label>
+                <input type="file" class="form-control" (change)="onFileSelected($event)">
+            </div>
+
+            <div class="">
+                <hr>
+                <hr>
+                <div class="">
+                    <div class="d-flex toggle-btn">
+                        <h4>Bank Details*</h4>
+                        <button type="button" (click)="addBankDetail()" class="btn btn-primary">
+                            +</button>
+                        <button type="button" (click)="removeBankDetail()" class="btn btn-danger">
+                            -</button>
+                    </div>
+
+                    <div class="bg-white shadow-sm p-3">
+                        <div formArrayName="bank">
+                            <div *ngFor="let bankDetail of bank.controls; let i = index" [formGroupName]="i">
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">Account Number</label>
+                                            <input type="text" class="form-control" formControlName="account_no">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">Holder Name</label>
+                                            <input type="text" class="form-control" formControlName="account_holder_name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">Bank Name</label>
+                                            <input type="text" class="form-control" formControlName="bank_name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">Branch Name</label>
+                                            <input type="text" class="form-control" formControlName="branch_name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">Bank IFSC Code</label>
+                                            <input type="text" class="form-control" formControlName="bank_ifsc_code">
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-md-12">
+                                      <button type="button" class="btn btn-danger" (click)="removeBankDetail(i)">Remove Bank Detail</button>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="">
+                <hr>
+                <div class="">
+                    <div class="d-flex toggle-btn">
+                        <h4>Address Details*</h4>
+                        <button type="button" (click)="addAddressDetails()" class="btn btn-primary">
+                            + </button>
+                            <button type="button" (click)="removeAddressDetails()" class="btn btn-danger">
+                            - </button>
+                    </div>
+
+                    <div class="bg-white shadow-sm p-3">
+                        <div formArrayName="address">
+                            <div *ngFor="let address of address.controls; let i=index" [formGroupName]="i"
+                                class="mb-3">
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Address Line 1</label>
+                                        <input type="text" class="form-control" formControlName="address_line_1">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Address Line 2</label>
+                                        <input type="text" class="form-control" formControlName="address_line_2">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">City</label>
+                                        <input type="text" class="form-control" formControlName="city">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">State</label>
+                                        <input type="text" class="form-control" formControlName="state">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Pincode</label>
+                                        <input type="number" class="form-control" formControlName="pincode">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Country</label>
+                                        <input type="text" class="form-control" formControlName="country">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <hr>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</p-dialog>

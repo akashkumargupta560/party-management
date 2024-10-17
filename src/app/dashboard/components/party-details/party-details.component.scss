@@ -1,0 +1,24 @@
+ .party-details-page{
+    padding: 2em;
+    
+    .card{
+       margin-top: 20px;
+       p-table{
+        padding: 20px 20px;
+       }
+    }
+    .create-btn{
+        a{
+            text-decoration: none;
+        }
+        text-align: end;
+    }
+   
+}
+p-dialog{
+    .party-form{
+        .toggle-btn{
+            justify-content: space-between;
+        }
+    }
+}

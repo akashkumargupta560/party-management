@@ -1,0 +1,146 @@
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #666464;
+  
+    .logosec {
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+    }
+  
+    // .login {
+    //   p {
+    //     margin: 0;
+    //     a {
+    //       text-decoration: none;
+    //       color: #000;
+    //       font-size: 18px;
+    //     }
+    //   }
+    // }
+  
+    .message {
+      display: flex;
+      align-items: center;
+      .login {
+        p {
+          margin: 0;
+          a {
+            text-decoration: none;
+            color: #000;
+            font-size: 18px;
+          }
+        }
+      }
+      .dp {
+        display: flex;
+        align-items: center;
+  
+        .dpicn {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+  
+        .menuicn {
+          width: 30px;
+          height: 30px;
+          cursor: pointer;
+        }
+      }
+    }
+  
+    // Responsive for larger screens (desktops, tablets)
+    @media (min-width: 768px) {
+      .logosec .logo {
+        font-size: 28px;
+      }
+  
+      .login a {
+        font-size: 20px;
+      }
+  
+      .message .dpicn {
+        width: 45px;
+        height: 45px;
+      }
+  
+      .message .menuicn {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  
+    // Responsive for mobile view (max-width: 768px)
+    @media (max-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+  
+      .logosec {
+        .logo {
+          font-size: 18px;
+        }
+      }
+  
+      .login {
+        p {
+          a {
+            font-size: 16px;
+          }
+        }
+      }
+  
+      .message {
+        .dpicn {
+          width: 30px;
+          height: 30px;
+        }
+  
+        .menuicn {
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+  
+    // Responsive for smaller mobile screens (max-width: 576px)
+    @media (max-width: 576px) {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px;
+  
+      .logosec {
+        .logo {
+          font-size: 16px;
+        }
+      }
+  
+      .login {
+        margin-top: 10px;
+        a {
+          font-size: 14px;
+        }
+      }
+  
+      .message {
+        margin-top: 10px;
+  
+        .dpicn {
+          width: 25px;
+          height: 25px;
+        }
+  
+        .menuicn {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
