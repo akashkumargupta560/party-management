@@ -10,11 +10,8 @@ import { DropdownModule } from 'primeng/dropdown';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule }
-  from '@angular/platform-browser/animations';
 import { MessagesModule } from 'primeng/messages';
 import { StyleClassModule } from 'primeng/styleclass';
-import { CreatePartyComponent } from './components/create-party/create-party.component';
 import { DialogModule } from 'primeng/dialog';
 import { authGuard } from '../auth/auth.guard';
 const routes: Routes = [
@@ -23,9 +20,6 @@ const routes: Routes = [
   },
   {
     path: 'party-details', component: PartyDetailsComponent,canActivate: [authGuard]
-  },
-  {
-    path:'create-party', component:CreatePartyComponent, canActivate: [authGuard]
   },
 ]
 

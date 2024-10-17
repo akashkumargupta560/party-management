@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -23,12 +22,10 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      console.log('Login successful', this.loginForm.value);
       const authData = this.loginForm.getRawValue();
       this.authService.login(authData).subscribe(
         {
           next: (resposeData) => {
-            console.log("response data :", resposeData);
             if (resposeData) {
               this.router.navigate(['/party-details']);
             }
@@ -40,7 +37,6 @@ export class LoginComponent {
       // Handle login logic here (e.g., call an authentication service)
     } else {
       this.errorMessage = "Provide valid Creds";
-      console.log('Form is not valid');
     }
   }
 

@@ -16,7 +16,6 @@ export class PartyService {
 
 
   fetchParties() {
-      // console.log("Fecthing from their website");
       this.http.request('get', `${baseURl}/party/`).subscribe({
           next: (response) => {
               this.partyDetails = response;
@@ -57,7 +56,6 @@ export class PartyService {
                       this.fetchParties();
                   },
               error: (error) => {
-                console.log('error found :', error);
                   this.handleError(error);
               }
           }
@@ -86,11 +84,8 @@ export class PartyService {
             formData.append(eachKey, body[eachKey]);
           }
           else if (Array.isArray(body[eachKey]) || typeof body[eachKey] === 'object') {
-         console.log("Object or array key: ", eachKey);
-
               formData.append(eachKey, JSON.stringify(body[eachKey]));
           } else {
-          console.log("else eachKey: ", eachKey);
               formData.append(eachKey, body[eachKey]);
           }
       })

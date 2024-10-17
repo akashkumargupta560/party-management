@@ -1,8 +1,6 @@
 <div class="party-details-page">
     <div class="create-btn">
-        <!-- <a routerLink="/create-party" > -->
         <p-button label="Create Party" [raised]="true" severity="info" (onClick)="showDialog()" />
-        <!-- </a> -->
 
     </div>
     <div class="card">
@@ -162,7 +160,7 @@
                     <td>
                         <p-cellEditor>
                             <ng-template pTemplate="input">
-                                <input pInputText type="text" [(ngModel)]="party.image" />
+                                <input pInputText type="file" [(ngModel)]="party.image" />
                             </ng-template>
                             <ng-template pTemplate="output">
                                 {{party.image }}
@@ -204,12 +202,20 @@
             <div class="mb-3">
                 <label class="form-label">Company Name*</label>
                 <input type="text" class="form-control" formControlName="company_name">
+                <div class="error"
+                    *ngIf="partyForm.get('company_name')?.invalid && partyForm.get('company_name')?.touched">
+                    Username is required.
+                </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Mobile No.*</label>
                         <input type="tel" class="form-control" formControlName="mobile_no">
+                        <div class="error"
+                            *ngIf="partyForm.get('mobile_no')?.invalid && partyForm.get('mobile_no')?.touched">
+                            Username is required.
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -224,6 +230,9 @@
                     <div class="mb-3">
                         <label class="form-label">Email address</label>
                         <input type="email" class="form-control" formControlName="email" aria-describedby="emailHelp">
+                        <div class="error" *ngIf="partyForm.get('email')?.invalid && partyForm.get('email')?.touched">
+                            Username is required.
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -269,6 +278,10 @@
                     <div class="mb-3">
                         <label class="form-label">Credit limit*</label>
                         <input type="number" class="form-control" formControlName="credit_limit">
+                        <div class="error"
+                            *ngIf="partyForm.get('credit_limit')?.invalid && partyForm.get('credit_limit')?.touched">
+                            Username is required.
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -288,6 +301,10 @@
                             <label class="form-check-label">
                                 True
                             </label>
+                            <div class="error"
+                                *ngIf="partyForm.get('login_access')?.invalid && partyForm.get('login_access')?.touched">
+                                Username is required.
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6 p-2">
@@ -296,6 +313,10 @@
                             <label class="form-check-label">
                                 False
                             </label>
+                            <div class="error"
+                                *ngIf="partyForm.get('login_access')?.invalid && partyForm.get('login_access')?.touched">
+                                Username is required.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -348,35 +369,53 @@
                                         <div class="mb-3">
                                             <label class="form-label">Account Number</label>
                                             <input type="text" class="form-control" formControlName="account_no">
+                                            <div class="error"
+                                                *ngIf="partyForm.get('account_no')?.invalid && partyForm.get('account_no')?.touched">
+                                                Username is required.
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label class="form-label">Holder Name</label>
-                                            <input type="text" class="form-control" formControlName="account_holder_name">
+                                            <input type="text" class="form-control"
+                                                formControlName="account_holder_name">
+                                            <div class="error"
+                                                *ngIf="partyForm.get('account_holder_name')?.invalid && partyForm.get('account_holder_name')?.touched">
+                                                Username is required.
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label class="form-label">Bank Name</label>
                                             <input type="text" class="form-control" formControlName="bank_name">
+                                            <div class="error"
+                                                *ngIf="partyForm.get('bank_name')?.invalid && partyForm.get('bank_name')?.touched">
+                                                Username is required.
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label class="form-label">Branch Name</label>
                                             <input type="text" class="form-control" formControlName="branch_name">
+                                            <div class="error"
+                                                *ngIf="partyForm.get('branch_name')?.invalid && partyForm.get('branch_name')?.touched">
+                                                Username is required.
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label class="form-label">Bank IFSC Code</label>
                                             <input type="text" class="form-control" formControlName="bank_ifsc_code">
+                                            <div class="error"
+                                                *ngIf="partyForm.get('bank_ifsc_code')?.invalid && partyForm.get('bank_ifsc_code')?.touched">
+                                                Username is required.
+                                            </div>
                                         </div>
                                     </div>
-                                    <!-- <div class="col-md-12">
-                                      <button type="button" class="btn btn-danger" (click)="removeBankDetail(i)">Remove Bank Detail</button>
-                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -391,19 +430,22 @@
                         <h4>Address Details*</h4>
                         <button type="button" (click)="addAddressDetails()" class="btn btn-primary">
                             + </button>
-                            <button type="button" (click)="removeAddressDetails()" class="btn btn-danger">
+                        <button type="button" (click)="removeAddressDetails()" class="btn btn-danger">
                             - </button>
                     </div>
 
                     <div class="bg-white shadow-sm p-3">
                         <div formArrayName="address">
-                            <div *ngFor="let address of address.controls; let i=index" [formGroupName]="i"
-                                class="mb-3">
+                            <div *ngFor="let address of address.controls; let i=index" [formGroupName]="i" class="mb-3">
                                 <hr>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label class="form-label">Address Line 1</label>
                                         <input type="text" class="form-control" formControlName="address_line_1">
+                                        <div class="error"
+                                            *ngIf="partyForm.get('address_line_1')?.invalid && partyForm.get('address_line_1')?.touched">
+                                            Username is required.
+                                        </div>
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label">Address Line 2</label>
@@ -412,18 +454,34 @@
                                     <div class="col-md-6">
                                         <label class="form-label">City</label>
                                         <input type="text" class="form-control" formControlName="city">
+                                        <div class="error"
+                                            *ngIf="partyForm.get('city')?.invalid && partyForm.get('city')?.touched">
+                                            Username is required.
+                                        </div>
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label">State</label>
                                         <input type="text" class="form-control" formControlName="state">
+                                        <div class="error"
+                                            *ngIf="partyForm.get('state')?.invalid && partyForm.get('state')?.touched">
+                                            Username is required.
+                                        </div>
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label">Pincode</label>
                                         <input type="number" class="form-control" formControlName="pincode">
+                                        <div class="error"
+                                            *ngIf="partyForm.get('pincode')?.invalid && partyForm.get('pincode')?.touched">
+                                            Username is required.
+                                        </div>
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label">Country</label>
                                         <input type="text" class="form-control" formControlName="country">
+                                        <div class="error"
+                                            *ngIf="partyForm.get('country')?.invalid && partyForm.get('country')?.touched">
+                                            Username is required.
+                                        </div>
                                     </div>
                                 </div>
                             </div>

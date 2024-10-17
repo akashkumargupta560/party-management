@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { Product } from '../../../model/data';
 import { SelectItem, MessageService } from 'primeng/api';
-import { UsersService } from 'src/app/services/users.service';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { PartyService } from 'src/app/services/party.service';
@@ -127,7 +125,6 @@ export class PartyDetailsComponent {
      * @param party 
      */
     onRowDelete(party:any){
-        console.log("Party ID to delete: ", party.id);
         this.partyService.deletePartyById(party.id);
     }
     ngOnDestroy(): void {
@@ -154,7 +151,6 @@ export class PartyDetailsComponent {
         }
     }
     onSubmit() {
-        console.log('Form Submitted:', this.partyForm.value);
         if (this.partyForm.valid) {
             console.log('Form Submitted:', this.partyForm.value);
             const partyDetail = this.partyForm.value;

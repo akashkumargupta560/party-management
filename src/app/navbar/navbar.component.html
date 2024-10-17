@@ -1,22 +1,24 @@
+<header>
+  <div class="logosec">
+    <p class="logo">Party Management</p>
+  </div>
 
-  <header>
-    <div class="logosec">
-        <p class="logo">Party Management</p>
-    </div>
 
-  
-    <div class="message">
-      <div class="login">
-        <p><a routerLink="/login" class="text">Login</a></p>
-    </div>
-        <div class="dp">
-          <a routerLink="party-details">
-            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
-            class="dpicn" alt="dp">
-          </a>
-          <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
-          class="icn menuicn" id="menuicn" alt="menu-icon">
+  <div class="message" *ngIf="isAuthenticated">
+    <div class="dp">
+      <a routerLink="party-details">
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
+          class="dpicn" alt="dp">
+      </a>
+      <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
+        class="icn menuicn" id="menuicn" alt="menu-icon">
+        <div class="logout">
+          <p class="text" (click)="logOut()">LogOut</p>
         </div>
-    </div>  
+    </div>
+  </div>
+  <div class="login" *ngIf="!isAuthenticated">
+    <p><a routerLink="/login" class="text" >Login</a></p>
+  </div>
 
 </header>
