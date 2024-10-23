@@ -1,27 +1,122 @@
- .party-details-page{
+.party-details-page {
     padding: 2em;
-    
-    .card{
-       margin-top: 20px;
-       p-table{
-        padding: 20px 20px;
-       }
+
+    .card {
+        margin-top: 20px;
+
+        p-table {
+            padding: 20px 20px;
+        }
     }
-    .create-btn{
-        a{
+
+    .create-btn {
+        a {
             text-decoration: none;
         }
+
         text-align: end;
     }
-   
 }
-p-dialog{
-    .party-form{
-        .toggle-btn{
+
+p-dialog {
+    .party-form {
+        .toggle-btn {
             justify-content: space-between;
+
+            .button-groups {
+                display: flex;
+                column-gap: 20px;
+            }
         }
-        .error{
+
+        .error {
             color: red;
+        }
+    }
+
+    // Responsive for smaller mobile screens (max-width: 576px)
+    @media (max-width: 576px) {
+        .party-details-page {
+            padding: 1em; // Reduced padding for smaller screens
+            .create-btn {
+                text-align: center; /* For any text inside */
+            }
+        }
+
+        p-dialog {
+            .party-form {
+                form {
+                    .submit-form-btn {
+                        button {
+                            text-align: center;
+                            width: 100%; // Full-width buttons on small screens
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Responsive for tablets and medium devices (max-width: 768px)
+    @media (max-width: 768px) {
+        .party-details-page {
+            padding: 1.5em;
+            .create-btn {
+                text-align: center;
+            }
+        }
+
+        p-dialog {
+            .party-form {
+                form {
+                    .submit-form-btn {
+                        button {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Responsive for larger devices like desktops (max-width: 992px)
+    @media (max-width: 992px) {
+        .party-details-page {
+            padding: 2em;
+            .create-btn {
+                text-align: end;
+            }
+        }
+
+        p-dialog {
+            .party-form {
+                form {
+                    .submit-form-btn {
+                        button {
+                            width: auto; // Standard button size for larger screens
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Extra-large screens (min-width: 1200px)
+    @media (min-width: 1200px) {
+        .party-details-page {
+            padding: 3em; // More padding for extra-large screens
+        }
+
+        p-dialog {
+            .party-form {
+                form {
+                    .submit-form-btn {
+                        button {
+                            width: auto;
+                        }
+                    }
+                }
+            }
         }
     }
 }

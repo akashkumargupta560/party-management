@@ -4,7 +4,7 @@
     background-repeat: no-repeat;
     background-size: cover; 
     padding-top: 60px;
-    height: 100vh;
+    height: 120vh;
     .form-style input {
         border: 0;
         height: 50px;
@@ -54,3 +54,32 @@
         border-radius: 10px;
     }
 }
+
+ // Responsive for smaller mobile screens (max-width: 576px)
+ @media (max-width: 576px) {
+    .login-page{
+        height: 125vh;
+        .form-field{
+            .login-header{
+            font-size: 20px;
+            font-weight: 500;
+            }
+            .form-style{
+                .forget-password{
+                    font-size: 12px;
+                    text-decoration: none;
+                }
+                button{
+                    height: 35px;
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+                .facbook{
+                    font-size: 8px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+ }
+

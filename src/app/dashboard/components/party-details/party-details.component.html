@@ -354,10 +354,13 @@
                 <div class="">
                     <div class="d-flex toggle-btn">
                         <h4>Bank Details*</h4>
-                        <button type="button" (click)="addBankDetail()" class="btn btn-primary">
-                            +</button>
-                        <button type="button" (click)="removeBankDetail()" class="btn btn-danger">
-                            -</button>
+                        <div class="button-groups">
+                            <button type="button" (click)="addBankDetail()" class="btn btn-primary">
+                                +</button>
+                            <button type="button" (click)="removeBankDetail()" class="btn btn-danger">
+                                -</button>
+                        </div>
+
                     </div>
 
                     <div class="bg-white shadow-sm p-3">
@@ -428,10 +431,13 @@
                 <div class="">
                     <div class="d-flex toggle-btn">
                         <h4>Address Details*</h4>
-                        <button type="button" (click)="addAddressDetails()" class="btn btn-primary">
-                            + </button>
-                        <button type="button" (click)="removeAddressDetails()" class="btn btn-danger">
-                            - </button>
+                        <div class="button-groups">
+                            <button type="button" (click)="addAddressDetails()" class="btn btn-primary">
+                                + </button>
+                            <button type="button" (click)="removeAddressDetails()" class="btn btn-danger">
+                                - </button>
+                        </div>
+
                     </div>
 
                     <div class="bg-white shadow-sm p-3">
@@ -491,7 +497,9 @@
                 <hr>
                 <hr>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="submit-form-btn">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
         </form>
     </div>
 </p-dialog>

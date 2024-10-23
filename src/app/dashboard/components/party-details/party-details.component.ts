@@ -155,6 +155,7 @@ export class PartyDetailsComponent {
             console.log('Form Submitted:', this.partyForm.value);
             const partyDetail = this.partyForm.value;
             this.partyService.createPartyDetails(partyDetail);
+            this.partyForm.reset();
             this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Party Details added successfully' });
         } else {
             this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Invalid Party Details' });

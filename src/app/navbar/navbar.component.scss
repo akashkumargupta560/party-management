@@ -1,147 +1,158 @@
-
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #666464;
-  
-    .logosec {
-      .logo {
-        font-size: 24px;
-        font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #666464;
+
+  .logosec {
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+    }
+  }
+
+  .login {
+    p {
+      margin: 0;
+      a {
+        text-decoration: none;
         color: #fff;
+        font-size: 30px;
+        font-weight: 600;
       }
     }
-  
-    .login {
-      p {
-        margin: 0;
-        a {
-          text-decoration: none;
-          color: #fff;
-          font-size: 30px;
-          font-weight: 600;
-        }
-      }
-    }
-  
-    .message {
+  }
+
+  .message {
+    display: flex;
+    align-items: center;
+    .dp {
       display: flex;
       align-items: center;
-      .dp {
-        display: flex;
-        align-items: center;
-  
-        .dpicn {
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          margin-right: 30px;
-        }
-  
-        .menuicn {
-          width: 30px;
-          height: 30px;
-          cursor: pointer;
-          margin-right: 30px;
-        }
-        .logout{
-            margin-top: 10px;
-            .text{
-              font-size: 25px;
-              color: #fff;
-              cursor: pointer;
-            }
-        }
+
+      .dpicn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 30px;
       }
-    }
-  
-    // Responsive for larger screens (desktops, tablets)
-    @media (min-width: 768px) {
-      .logosec .logo {
-        font-size: 28px;
+
+      .menuicn {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        margin-right: 30px;
       }
-  
-      .login a {
-        font-size: 20px;
-      }
-  
-      .message .dpicn {
-        width: 45px;
-        height: 45px;
-      }
-  
-      .message .menuicn {
-        width: 35px;
-        height: 35px;
-      }
-    }
-  
-    // Responsive for mobile view (max-width: 768px)
-    @media (max-width: 768px) {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-  
-      .logosec {
-        .logo {
-          font-size: 18px;
-        }
-      }
-  
-      .login {
-        p {
-          a {
-            font-size: 16px;
+      .logout{
+          margin-top: 10px;
+          .text{
+            font-size: 25px;
+            color: #fff;
+            cursor: pointer;
           }
-        }
-      }
-  
-      .message {
-        .dpicn {
-          width: 30px;
-          height: 30px;
-        }
-  
-        .menuicn {
-          width: 25px;
-          height: 25px;
-        }
       }
     }
-  
-    // Responsive for smaller mobile screens (max-width: 576px)
-    @media (max-width: 576px) {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 10px;
-  
-      .logosec {
-        .logo {
+  }
+
+  // Responsive for larger screens (desktops, tablets)
+  @media (min-width: 768px) {
+    .logosec .logo {
+      font-size: 28px;
+    }
+
+    .login a {
+      font-size: 20px;
+    }
+
+    .message .dpicn {
+      width: 45px;
+      height: 45px;
+    }
+
+    .message .menuicn {
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  // Responsive for mobile view (max-width: 768px)
+  @media (max-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .logosec {
+      .logo {
+        font-size: 18px;
+      }
+    }
+
+    .login {
+      p {
+        a {
           font-size: 16px;
         }
       }
-  
-      .login {
-        margin-top: 10px;
-        a {
-          font-size: 14px;
-        }
+    }
+
+    .message {
+      .dpicn {
+        width: 30px;
+        height: 30px;
       }
-  
-      .message {
-        margin-top: 10px;
-  
+
+      .menuicn {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+
+  // Responsive for smaller mobile screens (max-width: 576px)
+  @media (max-width: 576px) {
+    flex-direction: column;
+    //align-items: flex-start;
+    padding: 5px;
+
+    .logosec {
+      .logo {
+        font-size: 16px;
+        margin-bottom: 0px;
+      }
+    }
+
+    .login {
+      //margin-top: 10px;
+      a {
+        font-size: 14px;
+      }
+    }
+
+    .message {
+      margin-top: 10px;
+
+      .menuicn {
+        width: 20px;
+        height: 20px;
+      }
+      .dp{
         .dpicn {
           width: 25px;
           height: 25px;
+          margin-right: 19px;
         }
-  
-        .menuicn {
-          width: 20px;
-          height: 20px;
+        flex-direction: column;
+        .logout{
+          padding-right: 20px;
+          .text{
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 0;
+          }
         }
       }
     }
   }
+}
